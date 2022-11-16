@@ -1,4 +1,4 @@
-#include <shell.h>
+#include "shell.h"
 
 /**
  * interactive - returns treue if shell is interactive mode
@@ -8,7 +8,7 @@
  */
 int interactive(info_t *info)
 {
-	return (isatty(STDIN_fFILENO) && info->readfd <= 2);
+	return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }
 
 /**
@@ -35,7 +35,7 @@ int is_delim(char c, char *delim)
 int _isalpha(int c)
 {
 	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1;);
+		return (1);
 	else
 		return (0);
 }
