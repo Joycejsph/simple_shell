@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _eputs - prints an input string
+ *_eputs - prints an input string
  * @str: the string to be printed
  *
  * Return: Nothing
@@ -21,9 +21,10 @@ void _eputs(char *str)
 
 /**
  * _eputchar - writes the character c to stderr
- * @c: the character to print
+ * @c: The character to print
  *
- * Return: 1 on suzzess, else if errno is set, or error 1
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
 int _eputchar(char c)
 {
@@ -42,12 +43,12 @@ int _eputchar(char c)
 
 /**
  * _putfd - writes the character c to given fd
- * @c: the character to print
- * @fd: the file descriptor to write to
+ * @c: The character to print
+ * @fd: The filedescriptor to write to
  *
- * Return: 1 qon success else, on error, 1 and errno is set
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
  */
-
 int _putfd(char c, int fd)
 {
 	static int i;
@@ -64,7 +65,7 @@ int _putfd(char c, int fd)
 }
 
 /**
- * _putsfd - prints an input sring
+ *_putsfd - prints an input string
  * @str: the string to be printed
  * @fd: the filedescriptor to write to
  *
@@ -78,7 +79,7 @@ int _putsfd(char *str, int fd)
 		return (0);
 	while (*str)
 	{
-		i+= _putfd(*str++, fd);
+		i += _putfd(*str++, fd);
 	}
 	return (i);
 }
